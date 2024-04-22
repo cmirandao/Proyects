@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <section>
+    <div class="example-button-row"><button mat-raised-button (click)="navigateToFormProduct()">New Book</button></div>
+      <div><h1>Books app</h1></div>
+  </section>
+</mat-toolbar>
+<mat-accordion class="example-card">
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle
+    *ngFor="let book of books">
+    <mat-expansion-panel-header>
+      <button mat-raised-button matTooltip="Delete" (click)="deleteProduct(book)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-raised-button matTooltip="Edit" (click)="editProduct(book.work_id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <mat-panel-title>
+        {{book.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{book.authors}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Language: {{book.language}}</p>
+    <p>Summary: {{book.summary ? book.summary: 'No Summary'}}</p>
+  </mat-expansion-panel>
+</mat-accordion>

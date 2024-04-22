@@ -1,0 +1,45 @@
+<mat-toolbar>
+    <section>
+        <div class="example-button-row"><button mat-raised-button (click)="navigateToProducts()">Volver</button></div>
+        <div>
+            <h1>New Book</h1>
+        </div>
+    </section>
+</mat-toolbar>
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="bookForm" (ngSubmit)="saveProduct()">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input matInput [formControl]="title" required>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Author</mat-label>
+                    <input matInput [formControl]="authors" required>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Language</mat-label>
+                    <input matInput [formControl]="language" required>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Summary</mat-label>
+                    <textarea rows="10" matInput [formControl]="summary" required></textarea>
+                </mat-form-field>
+            </div>
+            <mat-card-actions class="example-button-row">
+                <button mat-raised-button class="action" type="submit">SAVE</button>
+                <button mat-raised-button class="action" type="button" (click)="cancel()">CANCEL</button>
+            </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>
