@@ -8,7 +8,11 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: rgb(226, 245, 238);
+  background-color: #f9f5eb;
+}
+
+mat-label {
+  font-size: 15px;
 }
 
 mat-tab-nav-panel {
@@ -26,30 +30,68 @@ mat-grid-list {
 }
 
 mat-toolbar {
-  padding: 5%;
+  background-color: #f8eac5;
+  color: rgb(134, 111, 62);
+  button {
+    color: rgb(105, 84, 40);
+  }
+  section{
+    width: 100%;
+    padding: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem !important;
+  }
+}
+
+.title-container {
   display: flex;
-  justify-content: start;
   align-items: center;
-  background-color: rgb(154, 180, 172);
+}
+
+.back-button {
+  margin-right: auto;
+}
+
+.back-action{
+  display: grid;
+  font-size: 14px ;
+  cursor: pointer;
+  margin: 0;
+  .back-btn{
+    display: flex;
+    align-items: center;
+    transform: translate(-10px, 5px);
+    span{
+      font-weight: 300 !important;
+    }
+    mat-icon{
+      margin: 0;
+      padding: 0;
+    }
+  }
+  span:last-of-type{
+    font-size: 18px !important;
+  }
 }
 
 mat-expansion-panel {
-  background-color: rgb(219, 237, 231);
+  background-color: #f9f5eb;
 }
 
-mat-card {
-  // margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  position: absolute;
-  top: 58%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  max-width: 450px; 
-  margin: 10px; 
+mat-card-actions button{
+  color: rgb(105, 84, 40);
+}
+#save {
+  background-color: rgb(241, 207, 135);
+}
+#cancel {
+  background-color: rgb(194, 184, 161);
 }
 
 mat-card-content {
-  background-color: rgb(189, 210, 203);
+  // background-color: rgb(189, 210, 203);
   padding: 25%;
 }
 
@@ -66,8 +108,25 @@ textarea {
 }
 
 .image-input-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+ .book-cover{
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  align-items: flex-start;
+  color: red ;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: .2);
+  
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+ }
 }
 
 .image-container,
@@ -82,24 +141,12 @@ textarea {
 .content {
   width: 50%;
 }
-img {
-  width: 13%;
-}
+// img {
+//   width: 13%;
+// }
 
 .example-card {
   margin-bottom: 8px;
-}
-
-.example-button-row {
-  display: table-cell;
-}
-
-section {
-  display: table;
-  margin: 30px;
-  h1 {
-    padding-left: 60%;
-  }
 }
 
 .example-flex-container {
@@ -108,13 +155,16 @@ section {
   flex-wrap: wrap;
 }
 
+.btn-actions{
+  display: flex;
+  gap: .5rem;
+  padding: 0;
+  justify-content: flex-start;
+}
+
 .example-full-width {
   width: 100%;
   height: 100%;
-}
-
-.example-card {
-  margin-bottom: 8px;
 }
 
 .example-button-row .mat-mdc-button-base {

@@ -46,8 +46,6 @@ export class BookDetailComponent implements OnInit {
       if (data) {
         this.books = data;
         this.bookForm.patchValue(data);
-      } else {
-        console.log('No found');
       }
     });
   }

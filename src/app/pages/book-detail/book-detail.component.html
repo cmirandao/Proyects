@@ -1,18 +1,17 @@
 <mat-toolbar>
-    <section>
-        <div class="example-button-row">
-            <button mat-raised-button style="background-color: rgb(159, 229, 206);" (click)="navigateToProducts()">Back</button>
-        </div>
-        <div class="example-button-row">
+    <button mat-button class="back-button" (click)="navigateToProducts()">
+        <mat-icon fontIcon="arrow_back"></mat-icon>Back</button>
+        <div class="back-action">
             <h1>Edit Book</h1>
         </div>
-    </section>
 </mat-toolbar>
 <mat-tab-nav-panel #tabPanel>
     <form [formGroup]="bookForm" (ngSubmit)="saveProduct()">
         <div class="image-input-container">
-            <img *ngIf="books.published_works" mat-card-image src="{{books.published_works[0].cover_art_url}}" alt="">
-            <img *ngIf="books.image" mat-card-image src="{{books.image}}" alt="">
+            <div class="book-cover">
+                <img *ngIf="books.published_works" mat-card-image src="{{books.published_works[0].cover_art_url}}" alt="">
+                <img *ngIf="books.image" mat-card-image src="{{books.image}}" alt="">
+              </div>
             <div class="inputs-container">
                 <mat-form-field appearance="outline">
                     <mat-label>Title</mat-label>
@@ -37,9 +36,9 @@
             <textarea rows="6" matInput [formControl]="summary" required></textarea>
         </mat-form-field>
 
-        <mat-card-actions class="example-button-row">
-            <button mat-raised-button class="action" style="background-color: rgb(51, 207, 134);"  type="submit">SAVE</button>
-            <button mat-raised-button class="action" style="background-color: rgb(87, 128, 114);" type="button" (click)="cancel()">CANCEL</button>
+        <mat-card-actions class="btn-actions">
+            <button mat-raised-button id="save" type="submit">SAVE</button>
+            <button mat-raised-button id="cancel" type="button" (click)="cancel()">CANCEL</button>
         </mat-card-actions>
 
     </form>
