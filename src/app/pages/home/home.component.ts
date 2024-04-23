@@ -20,12 +20,13 @@ import { SharedModule } from '../../shared/shared.module';
 export class HomeComponent implements OnInit {
   public all_products: any = [];
   public headers = ['id', 'Nombre', 'Dificultad', 'Imagen'];
-  public books : Books[]=[];
+  public books : any=[];
   urlImage :any;
   productsSubscription!: Subscription;
   selectedProduct: Books | null = null;
   dataLoaded: boolean = false;
   panelOpenState = false;
+  colorDelete= 'rgb(145, 71, 71)';
 
   constructor(private _productsService: ProductService) {}
 

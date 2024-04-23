@@ -1,33 +1,44 @@
-
 <mat-toolbar>
   <section>
     <div class="example-button-row">
-      <button mat-raised-button color="primary" (click)="navigateToFormProduct()">New Book</button>
+      <button mat-raised-button style="background-color: rgb(159, 229, 206);" (click)="navigateToFormProduct()">New Book</button>
     </div>
-      <div><h1>Books app</h1></div>
+    <div class="example-button-row">
+      <h1>Books app</h1>
+    </div>
   </section>
 </mat-toolbar>
-<mat-accordion  class="example-headers-align">
+<mat-accordion class="example-headers-align">
   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle
     *ngFor="let book of books">
     <mat-expansion-panel-header>
-
       <mat-panel-title>
         {{book.title}}
       </mat-panel-title>
       <mat-panel-description>
-        {{book.authors}}
-        <div>
-          <button mat-raised-button matTooltip="Delete" color="accent" (click)="deleteProduct(book)">
-            <mat-icon>delete</mat-icon>
-          </button>
-          <button mat-raised-button matTooltip="Edit" (click)="editProduct(book.work_id)">
-            <mat-icon>edit</mat-icon>
-          </button>
-        </div>
+        <div>{{book.authors}}</div>
+        
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Language: {{book.language}}</p>
-    <p>Summary: {{book.summary ? book.summary: 'No Summary'}}</p>
+    <div class="image-input-container">
+      <img *ngIf="book.published_works" mat-card-image src="{{book.published_works[0].cover_art_url}}" alt="">
+      <img *ngIf="book.image" mat-card-image src="{{book.image}}" alt="">
+      <div class="inputs-container">
+        <p>Language: {{book.language}}</p>
+        <p>Summary: {{book.summary ? book.summary: 'No Summary'}}</p>
+        <!-- <section> -->
+          <div  class="example-button-row">
+            <button id="actionButton" mat-mini-fab matTooltip="Delete" style="background-color: rgb(145, 71, 71);" (click)="deleteProduct(book)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-row">
+            <button id="actionButton" mat-mini-fab matTooltip="Edit" style="background-color: rgb(131, 192, 172);" (click)="editProduct(book.work_id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        <!-- </section> -->
+      </div>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>

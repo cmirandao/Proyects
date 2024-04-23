@@ -1,8 +1,9 @@
 <mat-toolbar>
     <section>
-        <div class="example-button-row"><button mat-raised-button color="primary"
-                (click)="navigateToProducts()">Back</button></div>
-        <div>
+        <div class="example-button-row">
+            <button mat-raised-button style="background-color: rgb(159, 229, 206);" (click)="navigateToProducts()">Back</button>
+        </div>
+        <div class="example-button-row">
             <h1>New Book</h1>
         </div>
     </section>
@@ -33,13 +34,12 @@
         <div>
             <mat-form-field appearance="outline">
                 <mat-label>Summary</mat-label>
-                <textarea rows="10" matInput [formControl]="summary" required></textarea>
+                <textarea rows="5" matInput [formControl]="summary" required></textarea>
             </mat-form-field>
         </div>
         <mat-card-actions class="example-button-row">
-            <button mat-raised-button class="action" color="accent" type="submit">SAVE</button>
-            <button mat-raised-button class="action" color="primary" type="button"
-                (click)="cancel()">CANCEL</button>
+            <button mat-raised-button class="action" style="background-color: rgb(51, 207, 134);" type="submit">SAVE</button>
+            <button mat-raised-button class="action" style="background-color: rgb(87, 128, 114);" type="button" (click)="cancel()">CANCEL</button>
         </mat-card-actions>
     </form>
 </mat-tab-nav-panel>

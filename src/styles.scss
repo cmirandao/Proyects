@@ -8,11 +8,11 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: rgb(189, 210, 203);
+  background-color: rgb(226, 245, 238);
 }
 
 mat-tab-nav-panel {
-  padding: 5%;
+  padding: 20px;
   display:flow-root
 }
 
@@ -27,13 +27,14 @@ mat-grid-list {
 
 mat-toolbar {
   padding: 5%;
-  display: flow-root;
-  align-content: center;
-  background-color: rgb(147, 159, 155);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: rgb(154, 180, 172);
 }
 
 mat-expansion-panel {
-  background-color: rgb(189, 210, 203);
+  background-color: rgb(219, 237, 231);
 }
 
 mat-card {
@@ -56,6 +57,14 @@ textarea {
   min-height: 100px;
 }
 
+#actionButton{
+  margin: 5px;
+  display:flow-root;
+  // justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
 .image-input-container {
   display: flex;
   align-items: flex-start;
@@ -74,7 +83,7 @@ textarea {
   width: 50%;
 }
 img {
-  width: 15%;
+  width: 13%;
 }
 
 .example-card {
@@ -115,9 +124,6 @@ section {
 .example-button-row {
   display: table-cell;
   max-width: 600px;
-  button {
-    padding-block: 5%;
-  }
 }
 
 .example-headers-align .mat-expansion-panel-header-description {
