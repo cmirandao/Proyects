@@ -8,6 +8,16 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(189, 210, 203);
+}
+
+mat-form-field{
+  display: block;
+}
+
+mat-grid-list {
+  width: 100%;
+  align-content: center;
 }
 
 mat-toolbar {
@@ -15,15 +25,39 @@ mat-toolbar {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-content: center;
+  background-color: rgb(147, 159, 155);
+}
+
+mat-expansion-panel {
+  background-color: rgb(189, 210, 203);
 }
 
 mat-card {
-  margin: 0;
+  // margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   position: absolute;
   top: 58%;
   left: 30%;
   transform: translate(-50%, -50%);
+  max-width: 450px; 
+  margin: 10px; 
+}
+
+mat-card-content {
+  background-color: rgb(189, 210, 203);
+  padding: 25%;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.content {
+  width: 50%;
+}
+img {
+  width: 50%;
 }
 
 .example-card {
@@ -67,4 +101,20 @@ section {
   button {
     padding-block: 5%;
   }
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content:space-between;
+  align-items: center;
+  div {
+    justify-content:flex-end;
+  }
+}
+
+.example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
 }

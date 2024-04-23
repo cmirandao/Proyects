@@ -63,6 +63,10 @@ export class HomeComponent implements OnInit {
     this._productsService.navigateToFormProduct();
   }
 
+  navigateToProducts() {
+    this._productsService.navigateToProducts();
+  }
+
   ngOnDestroy() {
     if (this.productsSubscription) {
       this.productsSubscription.unsubscribe();

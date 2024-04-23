@@ -15,6 +15,7 @@ export class ProductService {
   private productsUpdated = new Subject<Books[]>();
   dataLoaded: boolean = false;
   private localStorageKey = 'products';
+  published_works = "https://s3.amazonaws.com/mm-static-media/books/cover-art/fiction_nonfiction_poetry.png";
 
   getAllProducts(): Observable<any> {
     return this.http.get(`https://book-finder1.p.rapidapi.com/api/search`, {
@@ -57,6 +58,8 @@ export class ProductService {
     if (id) {
       const index = this.productsLocal.findIndex(p => p.work_id === id);
       if (index != -1) {
+        product.work_id = id;
+        product.published_works = this.productsLocal[index].published_works;
         this.productsLocal[index] = { ...product };
         this.saveLocalProducts();
         this.productsUpdated.next([...this.productsLocal]);
@@ -66,6 +69,7 @@ export class ProductService {
     } else {
       let newId = this.generateUniqueId();
       product.work_id = newId;
+      product.image = this.published_works;
       this.productsLocal.push({ ...product });
       this.saveLocalProducts();
       this.productsUpdated.next([...this.productsLocal]);

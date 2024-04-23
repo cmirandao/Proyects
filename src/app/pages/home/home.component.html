@@ -1,24 +1,30 @@
+
 <mat-toolbar>
   <section>
-    <div class="example-button-row"><button mat-raised-button (click)="navigateToFormProduct()">New Book</button></div>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="navigateToFormProduct()">New Book</button>
+    </div>
       <div><h1>Books app</h1></div>
   </section>
 </mat-toolbar>
-<mat-accordion class="example-card">
+<mat-accordion  class="example-headers-align">
   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle
     *ngFor="let book of books">
     <mat-expansion-panel-header>
-      <button mat-raised-button matTooltip="Delete" (click)="deleteProduct(book)">
-        <mat-icon>delete</mat-icon>
-      </button>
-      <button mat-raised-button matTooltip="Edit" (click)="editProduct(book.work_id)">
-        <mat-icon>edit</mat-icon>
-      </button>
+
       <mat-panel-title>
         {{book.title}}
       </mat-panel-title>
       <mat-panel-description>
         {{book.authors}}
+        <div>
+          <button mat-raised-button matTooltip="Delete" color="accent" (click)="deleteProduct(book)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-raised-button matTooltip="Edit" (click)="editProduct(book.work_id)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <p>Language: {{book.language}}</p>

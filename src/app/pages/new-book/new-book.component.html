@@ -1,13 +1,14 @@
 <mat-toolbar>
     <section>
-        <div class="example-button-row"><button mat-raised-button (click)="navigateToProducts()">Back</button></div>
+        <div class="example-button-row"><button mat-raised-button color="primary"
+                (click)="navigateToProducts()">Back</button></div>
         <div>
             <h1>New Book</h1>
         </div>
     </section>
 </mat-toolbar>
-<mat-card>
-    <mat-card-content>
+<mat-grid-list cols="2" rows="1">
+    <mat-grid-tile class="content">
         <form [formGroup]="bookForm" (ngSubmit)="saveProduct()">
             <div>
                 <mat-form-field appearance="outline">
@@ -37,9 +38,10 @@
                 </mat-form-field>
             </div>
             <mat-card-actions class="example-button-row">
-                <button mat-raised-button class="action" type="submit">SAVE</button>
-                <button mat-raised-button class="action" type="button" (click)="cancel()">CANCEL</button>
+                <button mat-raised-button class="action" color="accent" type="submit">SAVE</button>
+                <button mat-raised-button class="action" color="primary" type="button"
+                    (click)="cancel()">CANCEL</button>
             </mat-card-actions>
         </form>
-    </mat-card-content>
-</mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

@@ -44,18 +44,18 @@ export class BookDetailComponent implements OnInit {
   getBook(data: any): void {
     this.productsService.getProductById(data).subscribe((data) => {
       if (data) {
+        this.books = data;
         this.bookForm.patchValue(data);
       } else {
         console.log('No found');
       }
-      console.log(this.bookForm.value)
     });
   }
 
   saveProduct(): void {
     if (this.bookForm.valid) {
       const productData = this.bookForm.value;
-      this.productsService.saveProduct(productData, this.book);
+      this.productsService.saveProduct(productData, this.books.work_id);
       this.clearForm();
       this.navigateToProducts();
     } else {
