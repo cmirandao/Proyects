@@ -11,6 +11,11 @@ body {
   background-color: rgb(189, 210, 203);
 }
 
+mat-tab-nav-panel {
+  padding: 5%;
+  display:flow-root
+}
+
 mat-form-field{
   display: block;
 }
@@ -21,10 +26,8 @@ mat-grid-list {
 }
 
 mat-toolbar {
-  height: 15%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 5%;
+  display: flow-root;
   align-content: center;
   background-color: rgb(147, 159, 155);
 }
@@ -53,11 +56,20 @@ textarea {
   min-height: 100px;
 }
 
+.image-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.image-input-container img {
+  margin-right: 20px; /* ajusta el margen entre la imagen y los inputs */
+}
+
 .content {
   width: 50%;
 }
 img {
-  width: 50%;
+  width: 15%;
 }
 
 .example-card {

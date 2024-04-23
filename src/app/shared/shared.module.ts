@@ -30,7 +30,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatGridListModule,
-    MatTabsModule
+    MatTabsModule,
   ],
 
 })
