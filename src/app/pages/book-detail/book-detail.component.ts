@@ -45,6 +45,7 @@ export class BookDetailComponent implements OnInit {
     this.productsService.getProductById(data).subscribe((data) => {
       if (data) {
         this.books = data;
+        console.log(this.books)
         this.bookForm.patchValue(data);
       }
     });

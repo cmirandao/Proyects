@@ -59,7 +59,13 @@ export class ProductService {
       const index = this.productsLocal.findIndex(p => p.work_id === id);
       if (index != -1) {
         product.work_id = id;
-        product.published_works = this.productsLocal[index].published_works;
+        if (this.productsLocal[index].published_works) {
+          product.published_works = this.productsLocal[index].published_works;
+        }
+        if (this.productsLocal[index].image) {
+          product.image = this.productsLocal[index].image;
+        }
+        
         this.productsLocal[index] = { ...product };
         this.saveLocalProducts();
         this.productsUpdated.next([...this.productsLocal]);
